@@ -1,0 +1,64 @@
+
+Create:
+
+Создание одного продукта
+HTTP POST /products
+request body продукт в формате json
+{
+	name: "Fridge",
+	producer: "Simens"
+}
+
+--------------------
+Read
+
+Получение вех продуктов
+HTTP GET /products
+response body список продуктов в формате json
+[
+	{
+		id: 1,
+		name: "Fridge",
+		producer: "Simens"
+	},
+	{
+		id: 3,
+		name: "TV",
+		producer: "Sony"
+	},
+	{
+		id: 4,
+		name: "Table",
+		producer: "Ikea"
+	}
+]
+
+Получение конкретного продукта
+HTTP GET /products/{id}
+response body подробная информация о продукте в формате json
+{
+		id: 1,
+		name: "Fridge",
+		producer: "Simens",
+		description: "ggwgwegweg",
+		count: 5
+}
+
+
+----------------------
+Update
+
+Редактирование продукта
+HTTP PUT /products
+request body продукт в формате json
+{
+	id: 1,
+	name: "Fridge1",
+	producer: "Simens1"
+}
+
+-----------------------
+Delete
+
+Удаление товара
+HTTP DELETE /products/{id}

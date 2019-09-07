@@ -1,0 +1,17 @@
+Добавление товара в корзину
+
+HTTP POST /shoppingCart/add
+request body
+{
+   idProduct: 2,
+   count: 4
+}
+
+Удаление из корзины
+HTTP POST /shoppingCart/delete/{idProduct}
+
+Очистить всю корзину
+HTTP POST /shoppingCart/clear
+
+Просмотерть содержимое корзины
+HTTP GET /shoppingCart
