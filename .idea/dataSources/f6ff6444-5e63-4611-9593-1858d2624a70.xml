@@ -8,13 +8,12 @@
       <ObjectId>16485</ObjectId>
       <StateNumber>826</StateNumber>
       <Owner>kajuga</Owner>
-      <IntrospectionStateNumber>964</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1032</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
-      <Relations>sequence|table|16708|16710|1
-sequence|table|16716|16718|1
-sequence|table|16724|16726|1
-sequence|table|16735|16737|1
+      <Relations>sequence|table|16838|16840|1
+sequence|table|16846|16848|1
+sequence|table|16854|16856|1
 </Relations>
     </database>
     <database id="3" parent="1" name="ishop">
@@ -103,7 +102,7 @@ sequence|table|16735|16737|1
       <ObjectId>16487</ObjectId>
       <StateNumber>838</StateNumber>
       <Owner>kajuga</Owner>
-      <IntrospectionStateNumber>965</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1033</IntrospectionStateNumber>
       <Visible>1</Visible>
     </schema>
     <schema id="18" parent="2" name="pg_catalog">
@@ -191,221 +190,178 @@ sequence|table|16735|16737|1
       <SchemaName>pg_catalog</SchemaName>
       <SchemaId>11</SchemaId>
     </extension>
-    <sequence id="30" parent="17" name="description_id_seq">
-      <ObjectId>16724</ObjectId>
-      <StateNumber>959</StateNumber>
+    <sequence id="30" parent="17" name="producer_id_seq">
+      <ObjectId>16846</ObjectId>
+      <StateNumber>1022</StateNumber>
       <Owner>kajuga</Owner>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="31" parent="17" name="producer_id_seq">
-      <ObjectId>16716</ObjectId>
-      <StateNumber>958</StateNumber>
+    <sequence id="31" parent="17" name="product_type_id_seq">
+      <ObjectId>16838</ObjectId>
+      <StateNumber>1021</StateNumber>
       <Owner>kajuga</Owner>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="32" parent="17" name="product_id_seq">
-      <ObjectId>16735</ObjectId>
-      <StateNumber>960</StateNumber>
+    <sequence id="32" parent="17" name="products_id_seq">
+      <ObjectId>16854</ObjectId>
+      <StateNumber>1023</StateNumber>
       <Owner>kajuga</Owner>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="33" parent="17" name="product_name_id_seq">
-      <ObjectId>16708</ObjectId>
-      <StateNumber>957</StateNumber>
+    <table id="33" parent="17" name="producer">
+      <ObjectId>16848</ObjectId>
       <Owner>kajuga</Owner>
-      <SequenceIdentity>1..2147483647</SequenceIdentity>
-      <CacheSize>1</CacheSize>
-      <DataType>integer</DataType>
-    </sequence>
-    <table id="34" parent="17" name="description">
-      <ObjectId>16726</ObjectId>
-      <Owner>kajuga</Owner>
-      <StateNumber>960</StateNumber>
+      <StateNumber>1023</StateNumber>
     </table>
-    <table id="35" parent="17" name="producer">
-      <ObjectId>16718</ObjectId>
+    <table id="34" parent="17" name="product_type">
+      <ObjectId>16840</ObjectId>
       <Owner>kajuga</Owner>
-      <StateNumber>960</StateNumber>
+      <StateNumber>1023</StateNumber>
     </table>
-    <table id="36" parent="17" name="product">
-      <ObjectId>16737</ObjectId>
+    <table id="35" parent="17" name="products">
+      <ObjectId>16856</ObjectId>
       <Owner>kajuga</Owner>
-      <StateNumber>960</StateNumber>
+      <StateNumber>1023</StateNumber>
     </table>
-    <table id="37" parent="17" name="product_name">
-      <ObjectId>16710</ObjectId>
-      <Owner>kajuga</Owner>
-      <StateNumber>960</StateNumber>
-    </table>
-    <column id="38" parent="34" name="id">
+    <column id="36" parent="33" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>959</StateNumber>
-      <DefaultExpression>nextval(&apos;description_id_seq&apos;::regclass)</DefaultExpression>
+      <StateNumber>1022</StateNumber>
+      <DefaultExpression>nextval(&apos;internet_shop.producer_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="39" parent="34" name="description">
-      <Position>2</Position>
-      <DataType>text|0s</DataType>
-      <StateNumber>959</StateNumber>
-      <TypeId>25</TypeId>
-    </column>
-    <index id="40" parent="34" name="description_id">
-      <ObjectId>16733</ObjectId>
-      <StateNumber>959</StateNumber>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-      <Primary>1</Primary>
-    </index>
-    <key id="41" parent="34" name="description_id">
-      <ObjectId>16734</ObjectId>
-      <StateNumber>959</StateNumber>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>description_id</UnderlyingIndexName>
-    </key>
-    <column id="42" parent="35" name="id">
-      <Position>1</Position>
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>958</StateNumber>
-      <DefaultExpression>nextval(&apos;producer_id_seq&apos;::regclass)</DefaultExpression>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="43" parent="35" name="name">
+    <column id="37" parent="33" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
-      <StateNumber>958</StateNumber>
+      <StateNumber>1022</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="44" parent="35" name="producer_id">
-      <ObjectId>16722</ObjectId>
-      <StateNumber>958</StateNumber>
+    <index id="38" parent="33" name="producer_id">
+      <ObjectId>16852</ObjectId>
+      <StateNumber>1022</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="45" parent="35" name="producer_id">
-      <ObjectId>16723</ObjectId>
-      <StateNumber>958</StateNumber>
+    <key id="39" parent="33" name="producer_id">
+      <ObjectId>16853</ObjectId>
+      <StateNumber>1022</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>producer_id</UnderlyingIndexName>
     </key>
-    <column id="46" parent="36" name="id">
+    <column id="40" parent="34" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>960</StateNumber>
-      <DefaultExpression>nextval(&apos;product_id_seq&apos;::regclass)</DefaultExpression>
+      <StateNumber>1021</StateNumber>
+      <DefaultExpression>nextval(&apos;internet_shop.product_type_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="47" parent="36" name="name">
+    <column id="41" parent="34" name="name">
       <Position>2</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>960</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>1021</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <column id="48" parent="36" name="producer">
-      <Position>3</Position>
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>960</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="49" parent="36" name="description">
-      <Position>4</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>960</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="50" parent="36" name="price">
-      <Position>5</Position>
-      <DataType>numeric|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>960</StateNumber>
-      <TypeId>1700</TypeId>
-    </column>
-    <index id="51" parent="36" name="product_id">
-      <ObjectId>16744</ObjectId>
-      <StateNumber>960</StateNumber>
+    <index id="42" parent="34" name="product_type_id">
+      <ObjectId>16844</ObjectId>
+      <StateNumber>1021</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="52" parent="36" name="product_id">
-      <ObjectId>16745</ObjectId>
-      <StateNumber>960</StateNumber>
+    <key id="43" parent="34" name="product_type_id">
+      <ObjectId>16845</ObjectId>
+      <StateNumber>1021</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>product_type_id</UnderlyingIndexName>
+    </key>
+    <column id="44" parent="35" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1023</StateNumber>
+      <DefaultExpression>nextval(&apos;internet_shop.products_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="45" parent="35" name="type">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1023</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="46" parent="35" name="name">
+      <Position>3</Position>
+      <DataType>varchar(40)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1023</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="47" parent="35" name="producer">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1023</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="48" parent="35" name="description">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>1023</StateNumber>
+      <DefaultExpression>&apos;none&apos;::text</DefaultExpression>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="49" parent="35" name="price">
+      <Position>6</Position>
+      <DataType>numeric|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1023</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <index id="50" parent="35" name="product_id">
+      <ObjectId>16864</ObjectId>
+      <StateNumber>1023</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="51" parent="35" name="product_id">
+      <ObjectId>16865</ObjectId>
+      <StateNumber>1023</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>product_id</UnderlyingIndexName>
     </key>
-    <foreign-key id="53" parent="36" name="product_name_fkey">
-      <ObjectId>16746</ObjectId>
-      <StateNumber>960</StateNumber>
-      <ColNames>name</ColNames>
-      <RefTableId>16710</RefTableId>
+    <foreign-key id="52" parent="35" name="products_type_fkey">
+      <ObjectId>16866</ObjectId>
+      <StateNumber>1023</StateNumber>
+      <ColNames>type</ColNames>
+      <RefTableId>16840</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>product_name</RefTableName>
-      <RefKeyName>product_name_id</RefKeyName>
+      <RefTableName>product_type</RefTableName>
+      <RefKeyName>product_type_id</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="54" parent="36" name="product_producer_fkey">
-      <ObjectId>16751</ObjectId>
-      <StateNumber>960</StateNumber>
+    <foreign-key id="53" parent="35" name="products_producer_fkey">
+      <ObjectId>16871</ObjectId>
+      <StateNumber>1023</StateNumber>
       <ColNames>producer</ColNames>
-      <RefTableId>16718</RefTableId>
+      <RefTableId>16848</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>producer</RefTableName>
       <RefKeyName>producer_id</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="55" parent="36" name="product_description_fkey">
-      <ObjectId>16756</ObjectId>
-      <StateNumber>960</StateNumber>
-      <ColNames>description</ColNames>
-      <RefTableId>16726</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>description</RefTableName>
-      <RefKeyName>description_id</RefKeyName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="56" parent="37" name="id">
-      <Position>1</Position>
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>957</StateNumber>
-      <DefaultExpression>nextval(&apos;product_name_id_seq&apos;::regclass)</DefaultExpression>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="57" parent="37" name="name">
-      <Position>2</Position>
-      <DataType>varchar(100)|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>957</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="58" parent="37" name="product_name_id">
-      <ObjectId>16714</ObjectId>
-      <StateNumber>957</StateNumber>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-      <Primary>1</Primary>
-    </index>
-    <key id="59" parent="37" name="product_name_id">
-      <ObjectId>16715</ObjectId>
-      <StateNumber>957</StateNumber>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>product_name_id</UnderlyingIndexName>
-    </key>
   </database-model>
 </dataSource>
