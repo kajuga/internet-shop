@@ -12,16 +12,25 @@ import java.util.List;
  * Author : Aleksandr Fedorov
  */
 public class ProductDAO implements DAO<Product, String> {
+    static {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            System.err.println("PostgreSQL DataSource unable to load PostgreSQL JDBC Driver");
+        }
+    }
+
+
     /**
      * Connection to database.
      */
-    private final Connection connection;
+    public Connection connection;
 
     /**
      * Init database connection.
      * @param connection of database.
      */
-    public ProductDAO(final Connection connection) {
+    public ProductDAO(Connection connection) {
         this.connection = connection;
     }
 
@@ -48,7 +57,7 @@ public class ProductDAO implements DAO<Product, String> {
     }
 
     public List<Product> findAll(){
-
+return null;
     }
 
     /**

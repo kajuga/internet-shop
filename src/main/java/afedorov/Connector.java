@@ -13,12 +13,19 @@ public class Connector {
     static final String PASSWORD = "sashok";
 
 
+
+
     public static void main(String[] args) {
+
 
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
             ProductDAO productDAO = new ProductDAO(connection);
             Product product = new Product();
-//            product.setType(1);
+            product.setType("TV");
+            product.setName("GOO-NEW");
+            product.setProducer("SONY");
+            product.setDescription("Flatron 55 inch, black");
+            product.setPrice(2100.00);
             productDAO.create(product);
 
 
@@ -31,3 +38,11 @@ public class Connector {
     }
 
 }
+
+
+//    private int id;
+//    private String type;
+//    private String name;
+//    private String producer;
+//    private String description;
+//    private double price;
